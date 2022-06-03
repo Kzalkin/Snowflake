@@ -1,0 +1,19 @@
+<div class="show">
+  <div class="rant-content">
+    <div class="rant-header">
+      <span class="rant-id">Rant #<%= @rant.id %></span>
+      <span class="rant-author"><%= @rant.author %></span>
+      <span class="rant-title"><%= @rant.title %></span>
+    </div>
+    <span class="rant-body"><%= @rant.body %></span>
+    <span class="rant-posted">Posted <%= distance_of_time_in_words(DateTime.now, @rant.created_at)%> ago</span>
+  </div>
+  <div class="links">
+    <div class="link">
+      <%= link_to "Edit", rant_edit_path(@rant) %>
+    </div>
+    <div class="link">
+      <%= link_to "Delete", @rant, method: :delete %>
+    </div>
+  </div>
+</div>

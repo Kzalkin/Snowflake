@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Snowflake</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'snowflake.png'%>
+  </head>
+
+  <body>
+    <nav class="nav">
+      <div class="logo">
+      <%= image_tag("snowflake.png") %>
+        <%= link_to "Snowflake", rants_path %>
+      </div>
+      <div class="links">
+        <%= link_to "All Rants", rants_path %>
+        <%= link_to "Offended?", rants_new_path %>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
