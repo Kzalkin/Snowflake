@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get '/', to: 'rants#index'
+  root 'rants#index'
   get '/rants', to: 'rants#index', as: 'rants'
   get '/rants/new', to: 'rants#new'
   get '/rants/:id', to: 'rants#show', as: 'rant'
