@@ -1,26 +1,18 @@
 <div class="rants">
-
-    <h1>Snowflake Rants</h1>
-
-    <% @rants.each do |rant| %>
-        <div class="rant-item">
-            <div class="rant-content">
-                <span class="rant-author"><%= rant.author %></span>
-                <span class="rant-title"><%= rant.title %></span>
-                <span class="rant-body"><%= rant.body %></span>
-                <span class="rant-posted"><%= distance_of_time_in_words(DateTime.now, rant.created_at)%> ago</span>
-            </div>
-            <div class="links">
-                <%# <div class="link">
-                </div>
-                <div class="link">
-                </div>
-                <div class="link-right">
-                </div> %>
-                    <%= link_to "Show", rant %>
-                    <%= link_to "Edit", rant_edit_path(rant) %>
-                    <%= link_to "Delete", rant, method: :delete %>
-            </div>
-        </div>
-    <% end %>
+  <h1>Snowflake Rants</h1>
+  <% @rants.order(created_at: :desc).each do |rant| %>
+    <div class="rant-item">
+      <div class="rant-content">
+        <span class="rant-author"><%= rant.author %></span>
+        <span class="rant-title"><%= rant.title %></span>
+        <span class="rant-body"><%= rant.body %></span>
+        <span class="rant-posted"><%= distance_of_time_in_words(DateTime.now, rant.created_at)%> ago</span>
+      </div>
+      <div class="links">
+        <%= link_to "Show", rant %>
+        <%= link_to "Edit", rant_edit_path(rant) %>
+        <%= link_to "Delete", rant, method: :delete %>
+      </div>
+    </div>
+  <% end %>
 </div>
